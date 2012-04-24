@@ -1,0 +1,24 @@
+{
+  "name"            : "named-parameters" ,
+  "description"     : "A small and simple utility for working with named parameters. (Inspired by optimist.)",
+  "keywords"        : [ "named parameters", "named arguments", "option parser", "arguments", "parameters", "validation", "defaults" ],
+  "homepage"        : "https://www.github.com/rodw/named-parameters",
+  "repository"      : {"type": "git", "url": "git://github.com/rodw/named-parameters.git"},
+  "bugs"            : "https://github.com/rodw/phony/issues",
+  "author"          : "Rod Waldhoff (https://www.github.com/rodw/)",
+  "version"         : "0.0.1" ,
+  "main"            : "lib/named-parameters.js",
+  "dependencies"    : {
+  },
+  "devDependencies" : {
+    "coffee-script"   : "latest",
+    "expresso"        : "latest",
+    "jscoverage"      : "latest",
+    "mocha"           : "latest",
+    "should"          : "latest",
+    "docco"           : "latest"
+  },
+  "scripts" : {
+    "test"            : "make test"
+  }
+}
