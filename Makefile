@@ -96,14 +96,13 @@ module: js test docs coverage
 	mkdir -p $(MODULE_DIR)
 	cp -r lib $(MODULE_DIR)
 	cp -r test $(MODULE_DIR)
-	cp -r bin $(MODULE_DIR)
 	cp -r docs $(MODULE_DIR)
 	cp $(PACKAGE_JSON) $(MODULE_DIR)
 	cp README.* $(MODULE_DIR)
 	cp Makefile $(MODULE_DIR)
 
 test-module-install: clean-test-module-install module
-	mkdir ../testing-module-install; cd ../testing-module-install; npm install ../phony/module; node -e "require('assert').ok(require('named-parameters').parse({a:2}).values().a == 2)"; cd ../named-parameters; rm -r $(RM_DASH_I) ../testing-module-install
+	mkdir ../testing-module-install; cd ../testing-module-install; npm install ../named-parameters/module; node -e "require('assert').ok(require('named-parameters').parse({a:2}).values().a == 2)"; cd ../named-parameters; rm -r $(RM_DASH_I) ../testing-module-install
 
 clean-test-module-install:
 	rm -r $(RM_DASH_I) ../testing-module-install
