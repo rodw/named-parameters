@@ -4,15 +4,21 @@ Named Parameters is a small and simple utility for working with named parameters
 
 For example, using `named-parameters`, you can more easily replace a method signature like this:
 
-        util.inspect( myobject, null, 4, true )
+```coffee
+util.inspect( myobject, null, 4, true )
+```
 
 with one like this:
 
-        inspect( myobject, { depth:4, colors:true } )
+```javascript
+inspect( myobject, { depth:4, colors:true } )
+```
 
 or (in CoffeeScript):
 
-        inspect myobject, depth:4, colors:true
+```coffeescript
+inspect myobject, depth:4, colors:true
+```
 
 # Installation
 
@@ -45,7 +51,7 @@ You can specify default values:
         > params = np.parse(args).default('b','foo').values()
         { a: 1, c: 'no', b: 'foo' }
         
-or convert them in sane way:
+or convert them in a sane way:
 
         > params = np.parse(args).coerce('c','boolean').values()
         { a: 1, c: false }
@@ -249,4 +255,4 @@ This module is developed following the [git-flow](https://github.com/nvie/gitflo
 
 The default [master](https://github.com/rodw/named-parameters) branch only contains the released versions of the code and hence may seem relatively stagnant (or stable, depending upon your point of view).
 
-Most of the develop action happens on the [develop](https://github.com/rodw/named-parameters/tree/develop) branch or in feature branches.
+Most of the action happens on the [develop](https://github.com/rodw/named-parameters/tree/develop) branch or in feature branches.
