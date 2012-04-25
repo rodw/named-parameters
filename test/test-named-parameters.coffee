@@ -260,3 +260,27 @@ describe "named-parameters", ->
       (=>@np.parse( a:0 ).require('a','non-zero integer').values()).should.throw()
       (=>@np.parse( a:0.12345 ).require('a','non-zero integer').values()).should.throw()
       done()
+
+  describe "coercion", ()->
+
+    it "coerces numbers to numbers", (done)->
+      params = @np.parse( a:17 ).coerce('a','number').values()
+      (typeof params.a).should.equal 'number'
+      params.a.should.equal 17
+
+      params = @np.parse( a:17.234 ).coerce('a','number').values()
+      (typeof params.a).should.equal 'number'
+      params.a.should.equal 17.234
+
+      done()
+
+    it "coerces strings to numbers", (done)->
+      params = @np.parse( a:'17' ).coerce('a','number').values()
+      (typeof params.a).should.equal 'number'
+      params.a.should.equal 17
+
+      params = @np.parse( a:'17.234' ).coerce('a','number').values()
+      (typeof params.a).should.equal 'number'
+      params.a.should.equal 17.234
+
+      done()
