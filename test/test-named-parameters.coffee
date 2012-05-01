@@ -27,6 +27,15 @@ describe "named-parameters", ->
       params[name].should.equal value
     done()
 
+  it "exposes a constructor", (done)->
+    args = { a:1, b:2, d:true, e:{name:"value"}, f:[1,2,3,4] }
+    NamedParameters = new require(NAMED_PARAMETERS).NamedParameters
+    params = (new NamedParameters(args)).values()
+    params.should.be.instanceof Object
+    for name,value in args
+      params[name].should.equal value
+    done()
+
   it "creates a clone of the given arguments", (done)->
     args = { a:1, b:2, d:true, e:{name:"value"}, f:[1,2,3,4] }
     params = @np.parse(args).values()
