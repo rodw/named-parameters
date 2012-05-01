@@ -182,5 +182,6 @@ class NamedParameters
 
   _assert = (bool,message = "Invalid parameter")-> throw message if !bool
 
-
+exports = exports ? this
+exports.NamedParameters = NamedParameters
 exports.parse = (map)->return new NamedParameters(map)
