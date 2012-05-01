@@ -1,12 +1,12 @@
 {
   "name"            : "named-parameters" ,
   "description"     : "A small and simple utility for working with named parameters. (I.e., for using maps as function arguments, rather than arrays.) Inspired by optimist.",
-  "keywords"        : [ "named parameters", "named arguments", "option parser", "arguments", "function", "method", "argument", "parameter" "associative array", "validation", "defaults" ],
+  "keywords"        : [ "named parameters", "named arguments", "option parser", "arguments", "function", "method", "argument", "parameter", "associative array", "validation", "defaults" ],
   "homepage"        : "https://www.github.com/rodw/named-parameters",
   "repository"      : {"type": "git", "url": "git://github.com/rodw/named-parameters.git"},
   "bugs"            : "https://github.com/rodw/named-parameters/issues",
   "author"          : "Rod Waldhoff (https://www.github.com/rodw/)",
-  "version"         : "0.0.1" ,
+  "version"         : "0.0.2",
   "main"            : "lib/named-parameters.js",
   "dependencies"    : {
   },
