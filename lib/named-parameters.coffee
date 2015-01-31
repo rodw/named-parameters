@@ -55,7 +55,7 @@ class NamedParameters
           else if whennull?
             @map[name] = [ whennull ] unless whennull instanceof Array
         else
-          throw "I don't know how to coerce parameter \"#{name}\" into the unrecognized type \"#{type}\"."
+          throw(new Error("I don't know how to coerce parameter \"#{name}\" into the unrecognized type \"#{type}\"."))
     return this
 
   require:(name,validation=null,message=null)->
@@ -156,20 +156,20 @@ class NamedParameters
             message = "Expected #{name} parameter to be non-null value. Found (\"#{value}\")." unless message?
             _assert value?, message
           else
-            throw "Unrecognized validator string \"#{validation}\"."
+            throw(new Error("Unrecognized validator string \"#{validation}\"."))
       when 'function'
         value = @map[name]
         message = "Expected #{name} parameter (\"#{value}\") to pass validation #{validation}." unless message?
         _assert validation(name), message
       when 'object'
         if validation?
-          throw "Unrecognized validator object \"#{validation}\"."
+          throw(new Error("Unrecognized validator object \"#{validation}\".")
         else
           value = @map[name]
           message = "Expected #{name} parameter to be non-null value. Found (\"#{value}\")." unless message?
           _assert value?, message
       else
-        throw "Unrecognized validator string \"#{validation}\"."
+        throw(new Error("Unrecognized validator string \"#{validation}\"."))
     return this
 
   demand:(name,validation,message)->@require(name,validation,message)
@@ -180,7 +180,7 @@ class NamedParameters
       clone[n] = v if obj.hasOwnProperty(n)
     return clone
 
-  _assert = (bool,message = "Invalid parameter")-> throw message if !bool
+  _assert = (bool,message = "Invalid parameter")-> throw(new Error(message)) if !bool
 
 exports = exports ? this
 exports.NamedParameters = NamedParameters
