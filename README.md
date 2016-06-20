@@ -1,3 +1,5 @@
+*(NOTE: While it should continue to work fine, this module is no longer actively maintained.)*
+
 # Named Parameters
 
 Named Parameters is a small and simple utility for working with named parameters in JavaScript/CoffeeScript.  That is, `named-parameters` is a Node.js module intended to make it easier to write functions that use map (i.e. associative arrays or, more accurately, JavaScript `Object`) parameters that use property names to define the role of each argument rather than relying on their ordinal position.
